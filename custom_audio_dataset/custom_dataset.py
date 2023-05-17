@@ -24,9 +24,10 @@ class Urban_Sound_8K_Dataset(Dataset):
     
     def _get_audio_sample_label(self,index):
         return self.annotations.iloc[index,6]
-
-ANNOTATIONS_FILE = "UrbanSound8K/metadata/UrbanSound8K.csv"
-AUDIO_DIR = "UrbanSound8K/audio"
-x = Urban_Sound_8K_Dataset(ANNOTATIONS_FILE,AUDIO_DIR)
-print(len(x))
-print(x[10])
+    
+if __name__ == "__main__":
+    ANNOTATIONS_FILE = "datasets/UrbanSound8K/audio"
+    AUDIO_DIR = "datasets/UrbanSound8K/metadata/UrbanSound8K.csv"
+    x = Urban_Sound_8K_Dataset(ANNOTATIONS_FILE,AUDIO_DIR)
+    print(len(x))
+    print(x[10])
